@@ -31,8 +31,8 @@ namespace FoxTweaks
             var configFilePath = Path.Combine(pluginsPath, "FoxTweaks/config.json");
             var globalConfiguration = ChargerConfiguration(configFilePath);
 
-            _mecanoTweak = bool.Parse(globalConfiguration.activeMecanoTweak.ToString());
-            _citizenTweak = bool.Parse(globalConfiguration.activeCitoyenTweak.ToString());
+            _mecanoTweak = globalConfiguration.activeMecanoTweak == 1;
+            _citizenTweak = globalConfiguration.activeCitoyenTweak == 1;
 
             if (!_mecanoTweak) return;
             Debug.Log("TweakMecano : Enable");

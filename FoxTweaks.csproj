@@ -32,6 +32,9 @@
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
+    <PropertyGroup>
+      <PostBuildEvent>xcopy /Y "$(TargetDir)FoxTweaks.dll" "D:\Steam\steamapps\common\Nova-Life\Servers\test\Plugins"</PostBuildEvent>
+    </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
           <HintPath>D:\Steam\steamapps\common\Nova-Life\Nova-Life_Data\Managed\Assembly-CSharp.dll</HintPath>

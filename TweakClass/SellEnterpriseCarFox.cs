@@ -11,8 +11,8 @@ namespace FoxTweaks.TweakClass
 
         public SellEnterpriseCarFox()
         {
-            var sChatCommand = new SChatCommand("/sellCar", "Vendre le véhicule de société",
-                "/sellCar", (player, arg) =>
+            var sChatCommand = new SChatCommand("/sellMecanicCar", "Vendre le véhicule de societe",
+                "/sellMecanicCar", (player, arg) =>
                 {
                     SellCar(player);
                 });
