@@ -45,6 +45,14 @@ namespace FoxTweaks
 
         private static MainConfig ChargerConfiguration(string configFilePath)
         {
+            if (!Directory.Exists(Path.GetDirectoryName(configFilePath)))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(configFilePath));
+            }
+            if (!File.Exists(configFilePath))
+            {
+                File.WriteAllText(configFilePath, "{\n  \"activeMecanoTweak\": 1,\n  \"activeCitoyenTweak\": 1\n}");
+            }
             var jsonConfig = File.ReadAllText(configFilePath);
             return JsonConvert.DeserializeObject<MainConfig>(jsonConfig);
         }
